@@ -27,14 +27,23 @@ Desarrollar un pipeline de detección de emociones con **precisión superior al 
 
 ## 📊 Dataset
 
-**Amazon Reviews Dataset** — [Kaggle](https://www.kaggle.com/datasets/danielihenacho/amazon-reviews-dataset)
+**Amazon Fine Food Reviews** — [Kaggle](https://www.kaggle.com/datasets/snap/amazon-fine-food-reviews)
 
 | Campo | Detalle |
 |---|---|
-| Registros | 17,341 reseñas |
-| Columnas | `sentiment`, `cleaned_review`, `cleaned_review_length`, `review_score` |
+| Registros | 568,454 reseñas |
+| Columnas | 10 |
+| Tamaño | 300.9 MB (424.08 MB en RAM) |
 | Formato | CSV |
+| Duplicados | 0 |
+| Nulos totales | 53 |
 | Variable objetivo | `emotion_detected` (decepción, frustración, alegría, confianza, neutral) |
+
+**Columnas numéricas:** `Id`, `HelpfulnessNumerator`, `HelpfulnessDenominator`, `Score`, `Time`
+
+**Columnas de texto:** `ProductId`, `UserId`, `ProfileName`, `Summary`, `Text`
+
+> La variable principal de análisis es `Text` (cuerpo de la reseña) y `Summary` como contexto complementario.
 
 ---
 
@@ -59,7 +68,7 @@ CSV (Amazon Reviews)
 [5] Exportación Parquet + Visualizaciones
 ```
 
-**Columnas de salida:** `cleaned_review`, `emotion_detected`, `emotion_probability`, `review_score`, `sentiment`
+**Columnas de salida:** `Text`, `Summary`, `emotion_detected`, `emotion_probability`, `Score`, `HelpfulnessNumerator`, `HelpfulnessDenominator`
 
 ---
 
